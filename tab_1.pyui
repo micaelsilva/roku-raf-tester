@@ -1,0 +1,102 @@
+[
+  {
+    "nodes" : [
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{0, 6}, {308, 32}}",
+        "class" : "TextField",
+        "attributes" : {
+          "uuid" : "C4CA115A-4C4A-49B3-9B5A-2D164E35927C",
+          "frame" : "{{54, 84}, {200, 32}}",
+          "action" : "button_press",
+          "alignment" : "left",
+          "autocorrection_type" : "default",
+          "text" : "",
+          "placeholder" : "License Server URL:",
+          "font_name" : "<System>",
+          "spellchecking_type" : "default",
+          "class" : "TextField",
+          "name" : "license_server",
+          "font_size" : 17
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{0, 46}, {308, 32}}",
+        "class" : "TextField",
+        "attributes" : {
+          "placeholder" : "Serialization URL:",
+          "action" : "button_press",
+          "name" : "serialization_url",
+          "frame" : "{{54, 84}, {200, 32}}",
+          "spellchecking_type" : "default",
+          "class" : "TextField",
+          "uuid" : "53B9F87C-CB95-4262-823D-686E24F021FA",
+          "alignment" : "left",
+          "autocorrection_type" : "default",
+          "font_size" : 17,
+          "font_name" : "<System>"
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{0, 86}, {308, 32}}",
+        "class" : "TextField",
+        "attributes" : {
+          "placeholder" : "License Renew URL:",
+          "action" : "button_press",
+          "font_name" : "<System>",
+          "frame" : "{{54, 84}, {200, 32}}",
+          "spellchecking_type" : "default",
+          "class" : "TextField",
+          "uuid" : "53B9F87C-CB95-4262-823D-686E24F021FA",
+          "alignment" : "left",
+          "autocorrection_type" : "default",
+          "name" : "renew_url",
+          "font_size" : 17
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{0, 126}, {308, 32}}",
+        "class" : "TextField",
+        "attributes" : {
+          "placeholder" : "App Data:",
+          "action" : "button_press",
+          "font_name" : "<System>",
+          "frame" : "{{54, 84}, {200, 32}}",
+          "spellchecking_type" : "default",
+          "class" : "TextField",
+          "uuid" : "53B9F87C-CB95-4262-823D-686E24F021FA",
+          "alignment" : "left",
+          "autocorrection_type" : "default",
+          "name" : "app_data",
+          "font_size" : 17
+        },
+        "selected" : true
+      }
+    ],
+    "frame" : "{{0, 0}, {308, 199}}",
+    "class" : "View",
+    "attributes" : {
+      "name" : "DRM",
+      "enabled" : true,
+      "background_color" : "RGBA(1.000000,1.000000,1.000000,1.000000)",
+      "tint_color" : "RGBA(0.000000,0.478000,1.000000,1.000000)",
+      "border_color" : "RGBA(0.000000,0.000000,0.000000,1.000000)",
+      "flex" : ""
+    },
+    "selected" : false
+  }
+]

@@ -1,0 +1,87 @@
+[
+  {
+    "nodes" : [
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{251, 9}, {51, 31}}",
+        "class" : "Switch",
+        "attributes" : {
+          "action" : "button_press",
+          "frame" : "{{135, 84}, {51, 31}}",
+          "tint_color" : "RGBA(0.666667,0.000000,1.000000,1.000000)",
+          "class" : "Switch",
+          "uuid" : "C35D2A00-4235-4D98-BD05-30D9D2C68C0E",
+          "value" : true,
+          "name" : "islive_switch"
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{251, 46}, {51, 31}}",
+        "class" : "Switch",
+        "attributes" : {
+          "action" : "button_press",
+          "frame" : "{{135, 84}, {51, 31}}",
+          "tint_color" : "RGBA(0.666667,0.000000,1.000000,1.000000)",
+          "class" : "Switch",
+          "uuid" : "15506FDD-B030-417E-B789-06C0DA6A6985",
+          "value" : false,
+          "name" : "hashud_switch"
+        },
+        "selected" : true
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{6, 6}, {118, 32}}",
+        "class" : "Label",
+        "attributes" : {
+          "font_size" : 18,
+          "frame" : "{{85, 84}, {150, 32}}",
+          "uuid" : "A1BC523A-7411-43C3-A51F-DE5327BDEAFB",
+          "class" : "Label",
+          "alignment" : "left",
+          "text" : "Is Live",
+          "name" : "label1",
+          "font_name" : "<System>"
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{6, 45}, {118, 32}}",
+        "class" : "Label",
+        "attributes" : {
+          "font_size" : 18,
+          "frame" : "{{85, 84}, {150, 32}}",
+          "uuid" : "45708F72-36EE-4CFD-861A-228F608AE2C2",
+          "class" : "Label",
+          "alignment" : "left",
+          "text" : "Show HUD",
+          "name" : "label2",
+          "font_name" : "<System>"
+        },
+        "selected" : false
+      }
+    ],
+    "frame" : "{{0, 0}, {308, 199}}",
+    "class" : "View",
+    "attributes" : {
+      "name" : "General",
+      "enabled" : true,
+      "border_color" : "RGBA(0.000000,0.000000,0.000000,1.000000)",
+      "background_color" : "RGBA(1.000000,1.000000,1.000000,1.000000)",
+      "tint_color" : "RGBA(0.000000,0.478000,1.000000,1.000000)",
+      "flex" : ""
+    },
+    "selected" : false
+  }
+]

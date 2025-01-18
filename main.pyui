@@ -1,0 +1,129 @@
+[
+  {
+    "nodes" : [
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{6, 6}, {308, 32}}",
+        "class" : "Button",
+        "attributes" : {
+          "border_width" : 1,
+          "action" : "button_press",
+          "frame" : "{{120, 224}, {80, 32}}",
+          "tint_color" : "RGBA(0.666667,0.000000,1.000000,1.000000)",
+          "title" : "Devices",
+          "uuid" : "4D9A7843-5D8C-4D91-900C-E391B7312AE8",
+          "class" : "Button",
+          "corner_radius" : 3,
+          "border_color" : "RGBA(0.666667,0.000000,1.000000,1.000000)",
+          "name" : "devices_btn",
+          "font_size" : 15
+        },
+        "selected" : true
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{6, 156}, {308, 29}}",
+        "class" : "SegmentedControl",
+        "attributes" : {
+          "action" : "segmented_control",
+          "flex" : "LR",
+          "segments" : "General|DRM|Metadata|Headers",
+          "frame" : "{{100, 226}, {120, 29}}",
+          "class" : "SegmentedControl",
+          "uuid" : "853290D8-A557-4026-9454-C1B0334E8269",
+          "name" : "segmentedcontrol1"
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{6, 364}, {308, 62}}",
+        "class" : "Button",
+        "attributes" : {
+          "uuid" : "41F69C1F-8807-4CCD-A557-EE4EBD0CC94E",
+          "corner_radius" : 5,
+          "background_color" : "RGBA(0.666667,0.000000,1.000000,1.000000)",
+          "frame" : "{{120, 224}, {80, 32}}",
+          "tint_color" : "RGBA(1.000000,1.000000,1.000000,1.000000)",
+          "border_width" : 0,
+          "title" : "Play",
+          "action" : "play",
+          "font_bold" : true,
+          "class" : "Button",
+          "name" : "button1",
+          "font_size" : 20
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{6, 99}, {308, 32}}",
+        "class" : "TextField",
+        "attributes" : {
+          "placeholder" : "URL:",
+          "action" : "button_press",
+          "name" : "textfield_url",
+          "frame" : "{{60, 224}, {200, 32}}",
+          "spellchecking_type" : "no",
+          "class" : "TextField",
+          "uuid" : "0759707E-258F-460D-A070-6DA2E5B0B3A4",
+          "alignment" : "left",
+          "autocorrection_type" : "no",
+          "font_size" : 17,
+          "font_name" : "<System>"
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{6, 193}, {308, 163}}",
+        "class" : "View",
+        "attributes" : {
+          "frame" : "{{110, 190}, {100, 100}}",
+          "class" : "View",
+          "name" : "subviews",
+          "uuid" : "2C863033-6D45-4D40-8120-0F4433E01F7D"
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{6, 62}, {308, 29}}",
+        "class" : "SegmentedControl",
+        "attributes" : {
+          "action" : "select_fmt",
+          "flex" : "LR",
+          "segments" : "Auto|DASH|HLS",
+          "frame" : "{{100, 226}, {120, 29}}",
+          "class" : "SegmentedControl",
+          "uuid" : "52A5B111-DB6E-4BA0-8A07-E684D1E510F3",
+          "name" : "segmentedcontrol2"
+        },
+        "selected" : false
+      }
+    ],
+    "frame" : "{{0, 0}, {320, 480}}",
+    "class" : "View",
+    "attributes" : {
+      "name" : "Roku RAF Tester",
+      "enabled" : true,
+      "background_color" : "RGBA(1.000000,1.000000,1.000000,1.000000)",
+      "tint_color" : "RGBA(0.000000,0.478000,1.000000,1.000000)",
+      "border_color" : "RGBA(0.000000,0.000000,0.000000,1.000000)",
+      "flex" : ""
+    },
+    "selected" : false
+  }
+]
