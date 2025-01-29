@@ -1,7 +1,16 @@
 import json
 import argparse
+from enum import Enum
+
 import requests
+
 import ssdp
+
+
+class Fmt(Enum):
+    Auto = "Auto"
+    DASH = "DASH"
+    HLS = "HLS"
 
 
 class RAF:
@@ -9,7 +18,7 @@ class RAF:
         if ip:
             self.ip = ip
         else:
-            self.ip, self.device_name = self.scan()
+            self.ip, _ = self.scan()
 
         self.HTTP_PARAMS = {
             "live": "true",
@@ -62,24 +71,22 @@ def main():
         default=False,
         help='IP of the device')
     parser.add_argument(
-        '--connect',
-        action='store_true',
+        '--url',
         default=None,
-        help='Connect to a new network')
+        help='URL of the stream')
     parser.add_argument(
-        '--name',
+        '--format',
         default=None,
-        help='Change the Chromecast device name')
+        help='Stream format')
     parser.add_argument(
-        '--list',
+        '--lic',
+        default=False,
+        help='License server')
+    parser.add_argument(
+        '--hud',
         action='store_true',
         default=False,
-        help='List configured networks')
-    parser.add_argument(
-        '--forget',
-        action='store_true',
-        default=False,
-        help='Forget configured network')
+        help='Show HUD')
     parser.add_argument(
         '--mediaplayer',
         action='store_true',
@@ -90,13 +97,37 @@ def main():
 
     raf = RAF(ip=args.ip if args.ip else None)
 
-    if args.name:
-        print(raf)
+    if args.url:
+        raf.HTTP_PARAMS["url"] = args.url
+
+    if args.format:
+        try:
+            raf.HTTP_PARAMS["fmt"] = Fmt(args.format).name
+        except Exception:
+            print("Invalid format option")
+
+    if args.lic:
+        raf.HTTP_PARAMS["drmParams"]["drmParams"]["licenseServerURL"] = args.lic
+
+    if args.hud:
+        raf.HTTP_PARAMS["debugVideoHud"] = "true"
 
     if args.mediaplayer:
         try:
             r = requests.get(
                 f"http://{raf.ip}:8060/query/media-player",
+                timeout=5)
+        except Exception as e:
+            print(e)
+        else:
+            print(r.text)
+    else:
+        params = raf.HTTP_PARAMS.copy()
+        params["drmParams"] = json.dumps(params["drmParams"])
+        try:
+            r = requests.post(
+                f"http://{raf.ip}:8060/launch/63218",
+                params=params,
                 timeout=5)
         except Exception as e:
             print(e)
