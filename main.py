@@ -77,13 +77,13 @@ def button_press(sender):
   elif sender.name == "hashud_switch":
     HTTP_PARAMS["debugVideoHud"] = str(sender.value).lower()
   elif sender.name == "license_url":
-    HTTP_PARAMS["drmPrams"]["drmParams"]["licenseServerURL"] = sender.text
+    HTTP_PARAMS["drmParams"]["drmParams"]["licenseServerURL"] = sender.text
   elif sender.name == "serialization_url":
-    HTTP_PARAMS["drmPrams"]["drmParams"]["serializationUrl"] = sender.text
+    HTTP_PARAMS["drmParams"]["drmParams"]["serializationUrl"] = sender.text
   elif sender.name == "renew_url":
-    HTTP_PARAMS["drmPrams"]["drmParams"]["licenseRenewUrl"] = sender.text
+    HTTP_PARAMS["drmParams"]["drmParams"]["licenseRenewUrl"] = sender.text
   elif sender.name == "app_data":
-    HTTP_PARAMS["drmPrams"]["drmParams"]["appData"] = sender.text
+    HTTP_PARAMS["drmParams"]["drmParams"]["appData"] = sender.text
 
 def play(ctx):
   if not CASTIP:
