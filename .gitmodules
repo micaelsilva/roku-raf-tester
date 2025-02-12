@@ -1,0 +1,3 @@
+[submodule "ssdp"]
+	path = ssdp
+	url = http://github.com/micaelsilva/ssdp
