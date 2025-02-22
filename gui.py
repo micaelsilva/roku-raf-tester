@@ -58,7 +58,7 @@ def select_fmt(ctx):
 def select_tab(ctx, new_tab):
   global SUBVIEW
   ctx.superview.remove_subview(SUBVIEW)
-  SUBVIEW = ui.load_view(f'tab_{new_tab}')
+  SUBVIEW = ui.load_view(f'gui/tab_{new_tab}')
   SUBVIEW.frame = ctx.superview["subviews"].frame
   ctx.superview.add_subview(SUBVIEW)
 
@@ -99,9 +99,9 @@ def play(ctx):
     print(r.text)
 
 def main():
-  v = ui.load_view('main')
+  v = ui.load_view('gui/main')
   global SUBVIEW
-  SUBVIEW = ui.load_view('tab_0')
+  SUBVIEW = ui.load_view('gui/tab_0')
   SUBVIEW.frame = v["subviews"].frame 
   v.add_subview(SUBVIEW)
   v.present()
