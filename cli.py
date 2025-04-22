@@ -137,27 +137,22 @@ def main():
     if args.hud:
         raf.HTTP_PARAMS["debugVideoHud"] = "true"
 
-    if args.mediaplayer:
-        try:
+    params = raf.HTTP_PARAMS.copy()
+    params["drmParams"] = json.dumps(params["drmParams"])
+    try:
+        if args.mediaplayer:
             r = requests.get(
                 f"http://{raf.ip}:8060/query/media-player",
                 timeout=5)
-        except Exception as e:
-            print(e)
         else:
-            print(r.text)
-    else:
-        params = raf.HTTP_PARAMS.copy()
-        params["drmParams"] = json.dumps(params["drmParams"])
-        try:
             r = requests.post(
                 f"http://{raf.ip}:8060/launch/63218",
                 params=params,
                 timeout=5)
-        except Exception as e:
-            print(e)
-        else:
-            print(r.text)
+    except Exception as e:
+        print(e)
+    else:
+        print(r.text)
 
 
 if __name__ == "__main__":
