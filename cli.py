@@ -1,3 +1,4 @@
+import sys
 import json
 import argparse
 from enum import Enum
@@ -13,12 +14,21 @@ class Fmt(Enum):
     HLS = "HLS"
 
 
+class Drm(Enum):
+    Widevine = "Widevine"
+    Playready = "Playready"
+
+
 class RAF:
     def __init__(self, ip=None):
         if ip:
             self.ip = ip
         else:
-            self.ip, _ = self.scan()
+            try:
+                self.ip, _ = self.scan()
+            except Exception as e:
+                print(e)
+                sys.exit(1)
 
         self.HTTP_PARAMS = {
             "live": "true",
@@ -45,8 +55,16 @@ class RAF:
             st="roku:ecp",
             field='friendlyName',
             name="Roku")
-        if len(devices) == 1:
+        if len(devices) == 0:
+            raise Exception("No devices found")
+        elif len(devices) == 1:
             return devices[0]
+        else:
+            list_devices = {str(x): y for x, y in enumerate(devices)}
+            for i in list_devices.items():
+                print(f"{i[0]}: {i[1][1]} - {i[1][0]}")
+            id_ = input("Select number of the device: ")
+            return devices[int(id_)]
 
     def send(self):
         params = self.HTTP_PARAMS.copy()
@@ -83,6 +101,10 @@ def main():
         default=False,
         help='License server')
     parser.add_argument(
+        '--drm',
+        default=False,
+        help='DRM format (Widevine or Playready)')
+    parser.add_argument(
         '--hud',
         action='store_true',
         default=False,
@@ -108,6 +130,9 @@ def main():
 
     if args.lic:
         raf.HTTP_PARAMS["drmParams"]["drmParams"]["licenseServerURL"] = args.lic
+
+    if args.drm:
+        raf.HTTP_PARAMS["drmParams"]["drmParams"]["name"] = args.drm
 
     if args.hud:
         raf.HTTP_PARAMS["debugVideoHud"] = "true"
